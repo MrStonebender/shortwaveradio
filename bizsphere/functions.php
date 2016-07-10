@@ -144,6 +144,9 @@ add_action( 'widgets_init', 'BizSphere_widgets_init' );
  * Enqueue scripts and styles
  */
 function BizSphere_scripts() {
+	if(is_page(4)){
+		wp_enqueue_style( 'crit-squad', get_template_directory_uri().'/crit-squad.css' );
+	}
 	
 	if ( get_stylesheet_directory() != get_template_directory() ) {
 		wp_enqueue_style( 'BizSphere-parent-style', get_template_directory_uri().'/style.css' );
